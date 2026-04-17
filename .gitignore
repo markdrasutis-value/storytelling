@@ -7,3 +7,4 @@ venv/
 data/customers.json
 *.log
 .DS_Store
+bot/node_modules/
