@@ -1,0 +1,62 @@
+[
+  {
+    "sector": "ecommerce",
+    "outcomes": ["+22% conversion rate in 90 days", "-28% cart abandonment"],
+    "context": "The team had data everywhere — paid channels, CRM, Shopify — but no single view of what users did between first click and purchase. Conversion was flat at 2.1% and nobody could explain the checkout drop-off. They deployed Amplitude across the full funnel and within a week surfaced a critical friction point on the mobile payment step they had never seen before. A targeted fix shipped in 6 days and lifted conversion 22%.",
+    "structured": true
+  },
+  {
+    "sector": "ecommerce",
+    "outcomes": ["+18% repeat purchase rate", "+14% average order value"],
+    "context": "A mid-market DTC brand was running experiments through their engineering team — each test took 3–4 weeks to instrument, run, and read out. After switching to Amplitude they ran 11 experiments in the same period. The winning personalisation treatment on product recommendations drove an 18% increase in repeat purchase rate and a 14% AOV uplift within one quarter.",
+    "structured": true
+  },
+  {
+    "sector": "fintech",
+    "outcomes": ["+40% onboarding completion", "-35% KYC drop-off"],
+    "context": "A payments platform was losing a third of users at the document upload step in their KYC flow. The compliance team thought it was a trust issue; the product team thought it was UX. Amplitude showed it was a specific error state on iOS that only appeared above 50MB file sizes. The fix took 2 days. Onboarding completion jumped 40% in the first month.",
+    "structured": true
+  },
+  {
+    "sector": "fintech",
+    "outcomes": ["+30% 7-day activation", "+25% feature adoption"],
+    "context": "A challenger bank couldn't understand which early actions predicted long-term engaged users vs churn. Using Amplitude's correlation analysis they identified that users who set up a savings goal in their first session had 3x the 90-day retention. They redesigned onboarding to surface the savings goal earlier — 7-day activation improved 30% and feature adoption increased 25% across the cohort.",
+    "structured": true
+  },
+  {
+    "sector": "saas",
+    "outcomes": ["+35% trial-to-paid conversion", "-50% time to first value"],
+    "context": "A B2B SaaS company had a 21-day free trial with a 12% conversion rate. The product team were guessing which onboarding steps mattered most. Amplitude showed that users who completed three specific actions in their first session converted at 38% — everyone else converted at under 5%. They built a guided onboarding path around those three actions, time-to-value dropped 50% and trial conversion hit 16% within two months.",
+    "structured": true
+  },
+  {
+    "sector": "saas",
+    "outcomes": ["+28% NRR", "identified 68% of churning accounts 45 days early"],
+    "context": "A vertical SaaS company was seeing churn spikes they couldn't predict. After mapping behavioural signals in Amplitude they found that accounts whose power-user count fell below 3 in any rolling 30-day window churned at 4x the baseline rate. They built an automated alert for CSMs — 68% of churning accounts were now flagged 45 days in advance. NRR improved 28 points over two quarters.",
+    "structured": true
+  },
+  {
+    "sector": "media_entertainment",
+    "outcomes": ["+31% content engagement", "-22% subscriber churn"],
+    "context": "A streaming platform's recommendation engine was serving the same content shelf to all users regardless of watch history. Amplitude's cohort analysis showed that users who watched more than 2 pieces of long-form documentary content in month 1 had a 60% lower churn rate at 6 months. The editorial team used this to redesign the new-subscriber home screen — engagement rose 31% and monthly churn fell from 4.2% to 3.3%.",
+    "structured": true
+  },
+  {
+    "sector": "gaming",
+    "outcomes": ["+27% D7 retention", "+19% IAP conversion"],
+    "context": "A mid-core mobile games studio was seeing steep D3 drop-off after level 7. Traditional aggregate reporting showed the drop but couldn't explain it. Amplitude's funnel analysis revealed that players who encountered a specific difficulty spike on level 8 without completing a tutorial sub-quest churned at 3x the normal rate — but players who completed the sub-quest first had D7 retention 40% higher. A single game balance change lifted D7 retention 27% and IAP conversion 19%.",
+    "structured": true
+  },
+  {
+    "sector": "travel",
+    "outcomes": ["+19% booking conversion", "+24% mobile booking completion"],
+    "context": "A major OTA was seeing a significant gap between mobile search intent and completed bookings. The team assumed it was a price sensitivity issue. Amplitude showed it was a session-length problem — users who browsed more than 8 properties without applying a filter abandoned at a 72% rate on mobile. A simplified filter interaction on mobile drove a 19% improvement in booking conversion and a 24% lift in mobile checkout completion within 6 weeks.",
+    "structured": true
+  },
+  {
+    "sector": "healthcare",
+    "outcomes": ["+38% care plan completion", "-29% programme dropout"],
+    "context": "A digital health platform was seeing 40% of users drop out of 12-week care programmes by week 3. NPS surveys blamed 'busyness' but gave no actionable signal. Amplitude's path analysis showed that users who received a check-in notification within 48 hours of missing a care action reactivated at 3x the rate of users who weren't reached. Automating that trigger using Amplitude's cohort sync cut programme dropout 29% and care plan completion improved 38%.",
+    "structured": true
+  }
+]
