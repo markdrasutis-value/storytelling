@@ -1,0 +1,21 @@
+{
+  "name": "amplitude-story-bot",
+  "version": "1.0.0",
+  "description": "Amplitude Story Intelligence — Slack bot",
+  "main": "app.js",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev":    "node -e \"require('dotenv').config(); require('./app')\"",
+    "deploy": "serverless deploy",
+    "deploy:prod": "serverless deploy --stage prod"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.26.0",
+    "@slack/bolt": "^3.19.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "serverless": "^3.38.0",
+    "serverless-offline": "^13.3.4"
+  }
+}

@@ -1,0 +1,44 @@
+service: amplitude-story-bot
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ${opt:region, 'ap-southeast-1'}    # APAC-first; override with --region
+  stage:  ${opt:stage, 'dev'}
+  timeout: 29                                  # Slack requires 3s ack; Lambda keeps running after ack
+  memorySize: 512
+  environment:
+    SLACK_BOT_TOKEN:       ${env:SLACK_BOT_TOKEN}
+    SLACK_SIGNING_SECRET:  ${env:SLACK_SIGNING_SECRET}
+    ANTHROPIC_API_KEY:     ${env:ANTHROPIC_API_KEY}
+    TWILIO_ACCOUNT_SID:    ${env:TWILIO_ACCOUNT_SID, ''}
+    TWILIO_AUTH_TOKEN:     ${env:TWILIO_AUTH_TOKEN, ''}
+    WEB_BASE_URL:          ${env:WEB_BASE_URL, ''}
+  logs:
+    restApi: true
+
+functions:
+  bot:
+    handler: app.handler
+    description: Amplitude Story Intelligence bot — Slack + WhatsApp
+    events:
+      - http:
+          path:   /slack/events
+          method: post
+          cors:   false
+      - http:
+          path:   /whatsapp/webhook
+          method: post
+          cors:   false
+    # Keep one warm instance to avoid cold-start latency on first message of the day
+    provisionedConcurrency: 1
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 3000
+    lambdaPort: 3002

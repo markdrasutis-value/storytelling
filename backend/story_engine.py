@@ -56,7 +56,9 @@ def _format_fragments(fragments: List[Dict], sector: str) -> str:
     for i, f in enumerate(relevant, 1):
         ctx = anonymise_text(f.get("context", ""), sector)[:220]
         outcomes = ", ".join(f.get("outcomes", []))
-        lines.append(f"{i}. {ctx}… [outcomes: {outcomes}]")
+        source = f.get("source_customer")
+        cite = f" [verified: {source}]" if source else ""
+        lines.append(f"{i}.{cite} {ctx}… [outcomes: {outcomes}]")
     return "\n".join(lines)
 
 
@@ -92,8 +94,12 @@ PROSPECT PROFILE
 - Context: {size_ctx}{region_ctx}company
 - KPIs they care about: {kpis_str}
 
-VERIFIED OUTCOMES FROM SIMILAR {sector_label.upper()} CUSTOMERS (already anonymised)
+VERIFIED OUTCOMES FROM SIMILAR {sector_label.upper()} CUSTOMERS
 {fragments_text}
+
+Important: where a [verified: CustomerName] tag appears above, preserve it in the story output
+immediately after the anonymised persona descriptor (e.g. "A leading e-commerce company [Officeworks]").
+This lets the AE confirm the outcome is real. Only cite sources that appear in the data above.
 
 INDICATIVE OUTCOMES FOR THEIR SECTOR AND KPIS
 {chr(10).join(f"- {o}" for o in ind_outcomes)}

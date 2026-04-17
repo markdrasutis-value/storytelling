@@ -99,12 +99,14 @@ def _parse_messages(messages: List[Dict]) -> List[Dict]:
 
 
 def _parse_structured(text: str) -> Optional[Dict]:
-    sector_m = re.search(r"SECTOR:\s*(.+?)(?:\n|$)", text, re.IGNORECASE)
-    outcome_m = re.search(r"OUTCOME:\s*(.+?)(?:\n|$)", text, re.IGNORECASE)
-    context_m = re.search(r"CONTEXT:\s*([\s\S]+?)(?:\n\n|$)", text, re.IGNORECASE)
+    customer_m = re.search(r"CUSTOMER:\s*(.+?)(?:\n|$)", text, re.IGNORECASE)
+    sector_m   = re.search(r"SECTOR:\s*(.+?)(?:\n|$)", text, re.IGNORECASE)
+    outcome_m  = re.search(r"OUTCOME:\s*(.+?)(?:\n|$)", text, re.IGNORECASE)
+    context_m  = re.search(r"CONTEXT:\s*([\s\S]+?)(?:\n\n|$)", text, re.IGNORECASE)
     if not outcome_m:
         return None
     return {
+        "source_customer": customer_m.group(1).strip() if customer_m else None,
         "sector": sector_m.group(1).strip().lower() if sector_m else "general",
         "outcomes": [outcome_m.group(1).strip()],
         "context": context_m.group(1).strip() if context_m else "",
